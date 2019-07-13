@@ -62,6 +62,8 @@ class ApiCaller
 
     static void printPlayers(InputStream in) 
     {
+        System.out.print( 
+        		"Year" 	+ "$" + "Player Id" + "$" + "Player Name" + "$" + "Position" + "\n");
         try 
         {
         	// These two lines of code take the input stream and return a POJO. 
@@ -72,7 +74,10 @@ class ApiCaller
             for (Player player : players.getPlayerList()) 
             {
                 System.out.print( 
-                		player.getName() 	+ "$" + player.getId() + "\n");
+                		YEAR + "$" +
+                		player.getId() + "$" + 
+                		player.getName() 	+ "$" + 
+                				player.getPosition() + "\n");
             }
         } 
         catch (IOException ex) 
