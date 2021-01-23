@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Franchise {
 
@@ -14,19 +16,15 @@ public class Franchise {
     @JsonProperty("id")
     private String id;
 
-	public String getId() {
-		return id;
-	}
+	@JsonProperty("result")
+	private String result;
 
-	public void setId(String id) {
-		this.id = id;
-	}
+	@JsonProperty("score")
+	private String score;
 
-	public List<Player> getPlayers() {
-		return players;
-	}
+	private String week;
+	private String year;
+	private String opponent;
+	private String opponentScore;
 
-	public void setPlayers(List<Player> players) {
-		this.players = players;
-	}
 }

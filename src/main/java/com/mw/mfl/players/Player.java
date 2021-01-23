@@ -2,53 +2,23 @@ package com.mw.mfl.players;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Player {
 
     @JsonProperty("name")
-    private String name;
+    private String playerName;
 
     @JsonProperty("position")
     private String position;
 
     @JsonProperty("id")
-    private String id;
+    private String playerId;
 
     @JsonProperty("team")
     private String team;
 
-	public Player() { }
-
-	public String getId() {
-		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getPosition() {
-		return position;
-	}
-
-	public String getTeam() {
-		return team;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void setPosition(String position) {
-		this.position = position;
-	}
-
-    public void setTeam(String team) {
-		this.team = team;
-	}
+    private String year;
 }

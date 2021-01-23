@@ -4,7 +4,9 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class WeeklyResults {
 
@@ -14,19 +16,11 @@ public class WeeklyResults {
     @JsonProperty("week")
     private String week;
 
-	public String getWeek() {
-		return week;
-	}
+    @JsonIgnoreProperties(ignoreUnknown = true)
+    @Data
+    public static class Matchup {
 
-	public void setWeek(String week) {
-		this.week = week;
-	}
-
-	public List<Matchup> getMatchups() {
-		return matchups;
-	}
-
-	public void setMatchups(List<Matchup> matchups) {
-		this.matchups = matchups;
-	}
+        @JsonProperty("franchise")
+        private List<Franchise> franchises;
+    }
 }

@@ -1,12 +1,15 @@
 package com.mw.mfl.league;
 
-import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Franchise {
+
+    private String year;
 
     @JsonProperty("name")
     private String name;
@@ -14,21 +17,4 @@ public class Franchise {
     @JsonProperty("id")
     private String id;
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-    
-    
 }
